@@ -1,6 +1,6 @@
+File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib")
 require 'ruby_ttt'
 
-board = Board.new(3)
-player_one = Player.new(MARKER_X)
-player_two = Player.new(MARKER_O)
-CLIGame.new(board, player_one, player_two).start_cli_game!
+setup = CLIGameSetup.new
+settings = setup.get_settings
+CLIGame.new(settings).start_game!
